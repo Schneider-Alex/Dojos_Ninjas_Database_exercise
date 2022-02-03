@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojos and Ninjas Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .columncontainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .container{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+        <h1>{{specificdojo.name}} Ninjas</h1>
+    <table class=table>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+        </tr>
+            {%for ninja in specificdojo.ninjas%}
+        <tr>
+            <td>{{ninja.first_name}}</td>
+            <td>{{ninja.last_name}}</td>
+            <td>{{ninja.age}}</td>
+        </tr>
+            {%endfor%}
+        
+    </table>
+
+    <!-- <a href="/create/ninja">Create New Ninja</a> -->
+    <form action="/create/ninja">
+        <button class="btn btn-primary" style="margin-top: 2%;">Create New Ninja</button>
+    </form> 
+    <form action="/">
+        <button class="btn btn-primary" style="margin-top: 2%;">Home</button>
+    </form> 
+</body>
+</html>
